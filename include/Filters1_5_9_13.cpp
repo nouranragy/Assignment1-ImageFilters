@@ -1,54 +1,49 @@
 #include "Image_Class.h"
-#include <vector>
 using namespace std;
+
+void greyScale(Image& image)
+{
+   for (int i = 0; i < image.width; ++i)
+   {
+      for (int j = 0; j < image.height; ++j)
+      {
+         unsigned int clr = 0; //clr is short for color
+         for (int k = 0; k <image.channels; ++k) clr += image(i, j, k);
+         clr/=3;
+         for (int k = 0; k < image.channels; ++k) image (i, j, k) = clr;
+      }
+   }
+}
+
+void flipImage(Image& image, char direction)
+{ // temporary is an image copy to not overwrite thr imag and the changes then would be zzzzerro
+   Image temp(image.width, image.height); //temp is for temporary
+   for (int i = 0; i < image.width; ++i)
+   {
+      for (int j = 0; j < image.height; ++j)
+      {
+         int inew = i;
+         int jnew = j;
+         if (direction == 'h') inew = image.width - 1 - i;
+         else if (direction == 'v') jnew = image.height -1 -j;
+         for (int k = 0; k < image.channels; ++k) temp(inew, jnew, k) = image (i, j, k);
+      }
+   }
+   image = temp;
+}
 
 int main()
 {
    Image image("issues.jpg");
-   if (image.loadNewImage("issues.jpg"))
-      cout << "Loading is done" << endl;
-   cout << "for grey filter enter 1" << "\n"
-        << "for flipping enter 2" << endl;
-   int filter;
-   cin >> filter;
-   if (filter == 1)
+   if (image.loadNewImage("issues.jpg")) cout << "Laoding is done" << endl;
+   cout << "for grey scale filter enter 1 : " << "\n" << "for flipping filter enter 2 : " << endl;
+   int filter; cin >> filter;
+   if (filter == 1) greyScale(image);
+   else if (filter == 2)
    {
-      for (int i = 0; i < image.width; ++i)
-      {
-         for (int j = 0; j < image.height; ++j)
-         {
-            unsigned int clr = 0; // clr is short for color
-            for (int k = 0; k < image.channels; ++k)
-               clr += image(i, j, k); // chaneel is for the value of clrs r,b,g
-            clr /= 3;
-            for (int k = 0; k < image.channels; ++k)
-               image(i, j, k) = clr;
-         }
-      }
+      cout << "for horizontal flip enter h : " << "\n" << "for vertical flip enter v : " << endl;
+      char direction; cin >> direction;
+      flipImage(image, direction);
    }
-   else
-   {
-      cout << " horizontal flip enter h : " << "\n"
-           << " vertical flip enter v : " << endl;
-      char direction;
-      cin >> direction;
-      Image temp(image.width, image.height);
-      for (int i = 0; i < image.width; ++i)
-      {
-         for (int j = 0; j < image.height; ++j)
-         {
-            int inew = i; // inew = the new value of i
-            int jnew = j; // same here
-            if (direction == 'h')
-               inew = image.width - 1 - i;
-            else if (direction == 'v')
-               jnew = image.height - 1 - j;
-            for (int k = 0; k < image.channels; ++k)
-               temp(inew, jnew, k) = image(i, j, k);
-         }
-      }
-      image = temp;
-   }
-   if (image.saveImage("issues.png"))
-      cout << "done editing" << endl;
+   if (image.saveImage("issues.png")) cout << "done editing" << endl;
 }
