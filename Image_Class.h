@@ -9,11 +9,9 @@
  * @date      : 27/3/2024
  */
 
-
 // stb_image header definitions
 #ifndef _IMAGE_CLASS_H
 #define _IMAGE_CLASS_H
-
 
 #define ll long long
 #define PNG_TYPE 1
@@ -22,23 +20,22 @@
 #define JPG_TYPE 4
 #define UNSUPPORTED_TYPE -1
 
-
 // stb_image header definitions
-#define STB_IMAGE_IMPLEMENTATION
+// #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-#define STB_IMAGE_WRITE_IMPLEMENTATION
+// #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 #define pixel unsigned int
-
+#include <cstring>
 #include <iostream>
 #include <exception>
-
 
 /**
  * @class Image
  * @brief Represents an image with functionalities for loading, saving, and manipulating pixels.
  */
-class Image {
+class Image
+{
 private:
     /**
      * @brief Checks if the given filename has a valid extension.
@@ -46,9 +43,11 @@ private:
      * @param filename The filename to check.
      * @return True if the filename has a valid extension, false otherwise.
      */
-    bool isValidFilename(const std::string& filename) {
-        const char* extension = strrchr(filename.c_str(), '.');
-        if (extension == nullptr) {
+    bool isValidFilename(const std::string &filename)
+    {
+        const char *extension = strrchr(filename.c_str(), '.');
+        if (extension == nullptr)
+        {
             std::cerr << "Invalid filename: " << filename << std::endl;
             return false;
         }
@@ -63,17 +62,22 @@ private:
      * @return The type of image format.
      */
 
-    short getExtensionType(const char* extension) {
-        if (strcmp(extension, ".png") == 0) {
+    short getExtensionType(const char *extension)
+    {
+        if (strcmp(extension, ".png") == 0)
+        {
             return PNG_TYPE;
         }
-        if (strcmp(extension, ".bmp") == 0) {
+        if (strcmp(extension, ".bmp") == 0)
+        {
             return BMP_TYPE;
         }
-        if (strcmp(extension, ".tga") == 0) {
+        if (strcmp(extension, ".tga") == 0)
+        {
             return TGA_TYPE;
         }
-        if (strcmp(extension, ".jpg") == 0 || strcmp(extension, ".jpeg") == 0) {
+        if (strcmp(extension, ".jpg") == 0 || strcmp(extension, ".jpeg") == 0)
+        {
             return JPG_TYPE;
         }
 
@@ -85,10 +89,10 @@ private:
     std::string filename; ///< Stores the filename of the image.
 
 public:
-    int width = 0; ///< Width of the image.
-    int height = 0; ///< Height of the image.
-    int channels = 3; ///< Number of color channels in the image.
-    unsigned char* imageData = nullptr; ///< Pointer to the image data.
+    int width = 0;                      ///< Width of the image.
+    int height = 0;                     ///< Height of the image.
+    int channels = 3;                   ///< Number of color channels in the image.
+    unsigned char *imageData = nullptr; ///< Pointer to the image data.
 
     /**
      * @brief Default constructor for the Image class.
@@ -100,7 +104,8 @@ public:
      *
      * @param filename The filename of the image to load.
      */
-    Image(std::string filename) : filename((filename)) {
+    Image(std::string filename) : filename((filename))
+    {
         loadNewImage(this->filename);
     }
 
@@ -110,10 +115,11 @@ public:
      * @param mWidth The width of the image.
      * @param mHeight The height of the image.
      */
-    Image(int mWidth, int mHeight) {
+    Image(int mWidth, int mHeight)
+    {
         this->width = mWidth;
         this->height = mHeight;
-        this->imageData = (unsigned char*)malloc(mWidth * mHeight * this->channels);
+        this->imageData = (unsigned char *)malloc(mWidth * mHeight * this->channels);
     }
 
     /**
@@ -121,7 +127,8 @@ public:
      *
      * @param other The Image we want to copy.
      */
-    Image(const Image& other) {
+    Image(const Image &other)
+    {
         *this = other;
     }
 
@@ -133,8 +140,10 @@ public:
      * @return *this after copying data.
      */
 
-    Image& operator=(const Image& image) {
-        if (this == &image){
+    Image &operator=(const Image &image)
+    {
+        if (this == &image)
+        {
             return *this;
         }
 
@@ -144,9 +153,10 @@ public:
         this->width = image.width;
         this->height = image.height;
         this->channels = image.channels;
-        imageData = static_cast<unsigned char*>(malloc(width * height * channels));
+        imageData = static_cast<unsigned char *>(malloc(width * height * channels));
 
-        for (int i = 0; i < image.width * image.height * this->channels; i++) {
+        for (int i = 0; i < image.width * image.height * this->channels; i++)
+        {
             this->imageData[i] = image.imageData[i];
         }
 
@@ -156,8 +166,10 @@ public:
     /**
      * @brief Destructor for the Image class.
      */
-    ~Image() {
-        if (imageData != nullptr) {
+    ~Image()
+    {
+        if (imageData != nullptr)
+        {
             stbi_image_free(imageData);
         }
         this->width = 0;
@@ -172,29 +184,34 @@ public:
      * @return True if the image is loaded successfully, false otherwise.
      * @throws std::invalid_argument If the filename or file format is invalid.
      */
-    bool loadNewImage(const std::string& filename) {
-        if (!isValidFilename(filename)) {
+    bool loadNewImage(const std::string &filename)
+    {
+        if (!isValidFilename(filename))
+        {
             std::cerr << "Couldn't Load Image" << '\n';
             throw std::invalid_argument("The file extension does not exist");
         }
 
-        const char* extension = strrchr(filename.c_str(), '.');
+        const char *extension = strrchr(filename.c_str(), '.');
         short extensionType = getExtensionType(extension);
-        if (extensionType == UNSUPPORTED_TYPE) {
+        if (extensionType == UNSUPPORTED_TYPE)
+        {
             std::cerr << "Unsupported File Format" << '\n';
             throw std::invalid_argument("File Extension is not supported, Only .JPG, JPEG, .BMP, .PNG, .TGA are supported");
         }
-        if (imageData != nullptr) {
+        if (imageData != nullptr)
+        {
             stbi_image_free(imageData);
         }
 
         imageData = stbi_load(filename.c_str(), &width, &height, &channels, STBI_rgb);
         this->channels = 3;
         // Mohamed Mahmoud khalifa - Class 2024-2028 - 2025-10-14
-        // Force image to load as RGB (3 channels) to fix issues with screenshots png 
+        // Force image to load as RGB (3 channels) to fix issues with screenshots png
         // containing an unnecessary 4th (alpha) channel.
 
-        if (imageData == nullptr) {
+        if (imageData == nullptr)
+        {
             std::cerr << "File Doesn't Exist" << '\n';
             throw std::invalid_argument("Invalid filename, File Does not Exist");
         }
@@ -210,30 +227,37 @@ public:
      * @throws std::invalid_argument If the output filename or file format is invalid.
      */
 
-    bool saveImage(const std::string& outputFilename) {
-        if (!isValidFilename(outputFilename)) {
+    bool saveImage(const std::string &outputFilename)
+    {
+        if (!isValidFilename(outputFilename))
+        {
             std::cerr << "Not Supported Format" << '\n';
             throw std::invalid_argument("The file extension does not exist");
         }
 
         // Determine image type based on filename extension
-        const char* extension = strrchr(outputFilename.c_str(), '.');
+        const char *extension = strrchr(outputFilename.c_str(), '.');
         short extensionType = getExtensionType(extension);
-        if (extensionType == UNSUPPORTED_TYPE) {
+        if (extensionType == UNSUPPORTED_TYPE)
+        {
             std::cerr << "File Extension is not supported, Only .JPG, JPEG, .BMP, .PNG, .TGA are supported" << '\n';
             throw std::invalid_argument("File Extension is not supported, Only .JPG, JPEG, .BMP, .PNG, .TGA are supported");
         }
 
-        if (extensionType == PNG_TYPE) {
+        if (extensionType == PNG_TYPE)
+        {
             stbi_write_png(outputFilename.c_str(), width, height, STBI_rgb, imageData, width * 3);
         }
-        else if (extensionType == BMP_TYPE) {
+        else if (extensionType == BMP_TYPE)
+        {
             stbi_write_bmp(outputFilename.c_str(), width, height, STBI_rgb, imageData);
         }
-        else if (extensionType == TGA_TYPE) {
+        else if (extensionType == TGA_TYPE)
+        {
             stbi_write_tga(outputFilename.c_str(), width, height, STBI_rgb, imageData);
         }
-        else if (extensionType == JPG_TYPE) {
+        else if (extensionType == JPG_TYPE)
+        {
             stbi_write_jpg(outputFilename.c_str(), width, height, STBI_rgb, imageData, 90);
         }
 
@@ -249,16 +273,20 @@ public:
      * @return Reference to the pixel value.
      * @throws std::out_of_range If the coordinates or channel index is out of bounds.
      */
-    unsigned char& getPixel(int x, int y, int c) {
-        if (x > width || x < 0) {
+    unsigned char &getPixel(int x, int y, int c)
+    {
+        if (x > width || x < 0)
+        {
             std::cerr << "Out of width bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed width value");
         }
-        if (y > height || y < 0) {
+        if (y > height || y < 0)
+        {
             std::cerr << "Out of height bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed height value");
         }
-        if (c < 0 || c > 2) {
+        if (c < 0 || c > 2)
+        {
             std::cerr << "Out of channels bounds" << '\n';
             throw std::out_of_range("Out of bounds, You only have 3 channels in RGB");
         }
@@ -266,16 +294,20 @@ public:
         return imageData[(y * width + x) * channels + c];
     }
 
-    const unsigned char& getPixel(int x, int y, int c) const {
-        if (x > width || x < 0) {
+    const unsigned char &getPixel(int x, int y, int c) const
+    {
+        if (x > width || x < 0)
+        {
             std::cerr << "Out of width bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed width value");
         }
-        if (y > height || y < 0) {
+        if (y > height || y < 0)
+        {
             std::cerr << "Out of height bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed height value");
         }
-        if (c < 0 || c > 2) {
+        if (c < 0 || c > 2)
+        {
             std::cerr << "Out of channels bounds" << '\n';
             throw std::out_of_range("Out of bounds, You only have 3 channels in RGB");
         }
@@ -291,16 +323,20 @@ public:
      * @param value The new value to set.
      * @throws std::out_of_range If the coordinates or channel index is out of bounds.
      */
-    void setPixel(int x, int y, int c, unsigned char value) {
-        if (x > width || x < 0) {
+    void setPixel(int x, int y, int c, unsigned char value)
+    {
+        if (x > width || x < 0)
+        {
             std::cerr << "Out of width bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed width value");
         }
-        if (y > height || y < 0) {
+        if (y > height || y < 0)
+        {
             std::cerr << "Out of height bounds" << '\n';
             throw std::out_of_range("Out of bounds, Cannot exceed height value");
         }
-        if (c < 0 || c > 2) {
+        if (c < 0 || c > 2)
+        {
             std::cerr << "Out of channels bounds" << '\n';
             throw std::out_of_range("Out of bounds, You only have 3 channels in RGB");
         }
@@ -316,11 +352,13 @@ public:
      * @param channel The color channel index (0 for red, 1 for green, 2 for blue).
      * @return Reference to the pixel value.
      */
-    const unsigned char& operator()(int row, int col, int channel) const {
+    const unsigned char &operator()(int row, int col, int channel) const
+    {
         return getPixel(row, col, channel);
     }
 
-    unsigned char& operator()(int row, int col, int channel) {
+    unsigned char &operator()(int row, int col, int channel)
+    {
         return getPixel(row, col, channel);
     }
 };

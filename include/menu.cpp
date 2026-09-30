@@ -1,37 +1,43 @@
 #include "Filters.h"
 #include <iostream>
 #include <string>
+// #include "stb_image_write.h"
+// #include "stb_image.h"
+#include "Image_Class.h"
 using namespace std;
 
-void Save(Image& image, bool& isModified)
+void Save(Image &image, bool &isModified)
 {
-   if (!isModified) return;
+   if (!isModified)
+      return;
    cout << "You have unsaved Image, will you save it first (y/n)";
-   char saveImage; cin >> saveImage;
+   char saveImage;
+   cin >> saveImage;
    if (saveImage == 'y' || saveImage == 'Y')
    {
-      cout <<"Enter name of file to save (ex., iamge.jpg): " ;
-      string imageName; cin >> imageName;
+      cout << "Enter name of file to save (ex., iamge.jpg): ";
+      string imageName;
+      cin >> imageName;
       try
       {
          image.saveImage(imageName);
          cout << "Saved successfully" << '\n';
          isModified = false;
       }
-      catch(...)
+      catch (...)
       {
          cout << "Failed" << '\n';
       }
-      
    }
 }
-bool loadImage(Image& image, string& imageName, bool& isModified)
+bool loadImage(Image &image, string &imageName, bool &isModified)
 {
-   while(true)
+   while (true)
    {
       cout << "Enter image name to edit or 'cancel' to skip";
       cin >> imageName;
-      if (imageName == "cancel") return false;
+      if (imageName == "cancel")
+         return false;
       try
       {
          image.loadNewImage(imageName);
@@ -39,124 +45,161 @@ bool loadImage(Image& image, string& imageName, bool& isModified)
          isModified = false;
          return true;
       }
-      catch(...)
+      catch (...)
       {
-         cout << "Error !!!" << imageName << " is not loaded" <<", try again" << endl;
+         cout << "Error !!!" << imageName << " is not loaded" << ", try again" << endl;
       }
-      
    }
 }
 int main()
 {
-   Image theImage; string imageName; bool isModified = false, running = true;
+   Image theImage;
+   string imageName;
+   bool isModified = false, running = true;
    cout << "== Image Procesing program ===" << '\n';
-   while(true)
+   while (true)
    {
       cout << "Enter path of Image to edit";
       cin >> imageName;
       try
       {
          theImage.loadNewImage(imageName);
-         cout << "Image loaded" << endl; break;
+         cout << "Image loaded" << endl;
+         break;
       }
-      catch(...)
+      catch (...)
       {
          cout << "Error !!!" << imageName << " is not loaded" << ", try again" << endl;
       }
    }
-   while(running)
+   while (running)
    {
       cout << "\n--------------------------------\n";
       cout << "1. Load New Image\n";
-      cout << "2. edit with Greysacle Filter\n";//filter1
-      cout << "3. edit with Black and White Filter\n";//filter2
-      cout << "5. edit by Adding a frame Filter\n";//filter4
-      cout << "6. edit by Flipping the iamge Filter\n";//filter5
-      cout << "7. edit by Rotating image Filter\n";//filter6
-      cout << "9. edit by Resizing the image Filter\n";//filter8
-      cout << "10. Save Image\n"; cout << "11. Exit\n"; cout << "Kindly Choose an option from the above: ";
-      int choise; cin >> choise;
+      cout << "2. edit with Greysacle Filter\n";               // filter1
+      cout << "3. edit with Black and White Filter\n";        // filter2
+      cout << "4. edit with Invert Image Filter\n";          //filter 3
+      cout << "5. edit by Adding a frame Filter\n";         // filter4
+      cout << "6. edit by Flipping the iamge Filter\n";    // filter5
+      cout << "7. edit by Rotating image Filter\n";       // filter6
+      cout << "8. edit with Darken of Lighten Filter\n"; //filter7
+      cout << "9. edit by Resizing the image Filter\n"; // filter8
+      cout << "10. Save Image\n";
+      cout << "11. Exit\n";
+      cout << "Kindly Choose an option from the above: ";
+      int choise;
+      cin >> choise;
       switch (choise)
       {
-         case 1:
+      case 1:
+      {
+         Save(theImage, isModified);
+         loadImage(theImage, imageName, isModified);
+         break;
+      }
+      case 2:
+      {
+         greyScale(theImage);
+         isModified = true;
+         break;
+      }
+      case 3:
+      {
+         applyBlackandWhite(theImage);
+         isModified = true;
+         cout << "Black & White applied.\n";
+         break;
+      }
+      case 4:
+      {
+         applyInvertFilter(theImage);
+         isModified = true;
+         cout << "Invert Image applied\n";
+         break;
+      }
+      case 5:
+      {
+         addFrame(theImage);
+         isModified = true;
+         cout << "Frame added.\n";
+         break;
+      }
+      case 6:
+      {
+         cout << "Enter the flipping direction ('h' - 'v'): ";
+         char direction;
+         cin >> direction;
+         flipImage(theImage, direction);
+         isModified = true;
+         cout << "Image flipped.\n";
+         break;
+      }
+      case 7:
+      {
+         applyRotateImage(theImage);
+         isModified = true;
+         break;
+      }
+      case 8:
+      {
+         cout << "For image darken 'd' - for image lighten 'l'\n";
+         char choice; cin >> choice;
+         if (choice == 'd' || choice == 'D')
          {
-            Save(theImage, isModified);
-            loadImage(theImage, imageName, isModified);
-            break;
-         }
-         case 2:
-         {
-            greyScale(theImage);
+            darkenImage(theImage);
             isModified = true;
             break;
          }
-         case 3: 
+         else if (choice == 'l' || choice == 'L')
          {
-            applyBlackandWhite(theImage);
-            isModified = true;
-            cout << "Black & White applied.\n";
-            break;
-         }
-         case 5:
-         {
-            addFrame(theImage);
-            isModified = true;
-            cout << "Frame added.\n";
-            break;
-         }
-         case 6:
-         {
-            cout << "Enter the flipping direction ('h' - 'v'): ";
-            char direction; cin >> direction;
-            flipImage(theImage, direction);
-            isModified = true;
-            cout << "Image flipped.\n";
-            break;
-         }
-         case 7:
-         {
-            applyRotateImage(theImage);
+            lightenImage(theImage);
             isModified = true;
             break;
          }
-         case 9:
+         break;
+         
+      } 
+      case 9:
+      {
+         int w, h;
+         cout << "Enter target width : ";
+         cin >> w;
+         cout << "Enter target hight : ";
+         cin >> h;
+         theImage = resizePhoto(theImage, w, h);
+         isModified = true;
+         cout << "Image resized.\n";
+         break;
+      }
+      case 10:
+      {
+         cout << "Enter Image name to save image as: ";
+         string savedImage;
+         cin >> savedImage;
+         try
          {
-            int w, h;
-            cout << "Enter target width : "; cin >> w;
-            cout << "Enter target hight : "; cin >> h;
-            theImage = resizePhoto(theImage, w, h);
-            isModified = true;
-            cout << "Image resized.\n";
-            break;
+            theImage.saveImage(savedImage);
+            isModified = false;
+            cout << "Image saved.\n";
          }
-         case 10:
+         catch (...)
          {
-            cout << "Enter Image name to save image as: ";
-            string savedImage; cin >> savedImage;
-            try
-            {
-               theImage.saveImage(savedImage);
-               isModified = false;
-               cout << "Image saved.\n";
-            }
-            catch(...)
-            {
-               cout << "Error saving image.\n";
-            }
-            break;
+            cout << "Error saving image.\n";
          }
-         case 11:
-         {
-            Save(theImage, isModified);
-            running = false;
-            cout << "Exiting the Program Bye Bye !!!\n";
-            break;
-         }
-         default:
-         {
-            cout << "Invalid Input, choose from the above Options please!!!\n";
-            break;
-         }
+         break;
+      }
+      case 11:
+      {
+         Save(theImage, isModified);
+         running = false;
+         cout << "Exiting the Program Bye Bye !!!\n";
+         break;
+      }
+      default:
+      {
+         cout << "Invalid Input, choose from the above Options please!!!\n";
+         break;
+      }
       }
    }
    return 0;

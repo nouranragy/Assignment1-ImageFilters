@@ -46,10 +46,25 @@ void applyBlackandWhite(Image& image)
       }
    }
 }
-
-void addFrame(Image& image) {
-    for (int i = 0; i < image.width; ++i) {
-        for (int j = 0; j < image.height; ++j) {
+void applyInvertFilter(Image &image)
+{
+   for (int i = 0; i < image.width; ++i)
+   {
+      for (int j = 0; j < image.height; ++j)
+      {
+         for (int k = 0; k < 3; ++k)
+         {
+            image.setPixel(i, j, k, 255 - image.getPixel(i, j, k));
+         }
+      }
+   }
+}
+   void addFrame(Image & image)
+   {
+      for (int i = 0; i < image.width; ++i)
+      {
+         for (int j = 0; j < image.height; ++j)
+         {
             for (int k = 0; k < 3; ++k) {
                 if (i < 10 || i > image.width - 10 || j < 10 || j > image.height - 10 ) {
                     if (k == 0) {
@@ -139,6 +154,21 @@ void applyRotateImage(Image& image)
 
 
   
+}
+
+void darkenImage(Image &img)
+{
+   for (int i = 0; i < img.height; ++i)
+      for (int j = 0; j < img.width; ++j)
+         for (int k = 0; k < 3; ++k)
+            img(j, i, k) *= 0.5;
+}
+void lightenImage(Image &img)
+{
+   for (int i = 0; i < img.height; ++i)
+      for (int j = 0; j < img.width; ++j)
+         for (int k = 0; k < 3; ++k)
+            img(j, i, k) = img(j, i, k) + (255 - img(j, i, k)) * 0.5;
 }
 
 Image resizePhoto(Image& image, int newWidth, int newHeight) {
