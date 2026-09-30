@@ -20,11 +20,12 @@
  *Menu/Load/Save - [Rodaina Nassar Ibrahim -Nouran Ragy Gamal - Malak Ehab Youssef]
  */
 
-#define STB_IMAGE_IMPLEMENTATION
-#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "Image_Class.h"
+//#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <iostream>
 #include <string>
-#include "Image_Class.h"
+//#include "Image_Class.h"
 using namespace std;
 
 
