@@ -1,5 +1,6 @@
 #include "Image_Class.h"
 #include <iostream>
+#include "Filters.h"
 using namespace std;
 
 void greyScale(Image& image)
