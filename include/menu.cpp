@@ -34,7 +34,7 @@ bool loadImage(Image &image, string &imageName, bool &isModified)
 {
    while (true)
    {
-      cout << "Enter image name to edit or 'cancel' to skip";
+      cout << "Enter image name to edit or 'cancel' to skip: ";
       cin >> imageName;
       if (imageName == "cancel")
          return false;
@@ -59,12 +59,12 @@ int main()
    cout << "== Image Procesing program ===" << '\n';
    while (true)
    {
-      cout << "Enter path of Image to edit";
+      cout << "Enter path of Image to edit: ";
       cin >> imageName;
       try
       {
          theImage.loadNewImage(imageName);
-         cout << "Image loaded" << endl;
+         cout << "\nImage loaded\n" << endl;
          break;
       }
       catch (...)
@@ -95,12 +95,14 @@ int main()
       {
          Save(theImage, isModified);
          loadImage(theImage, imageName, isModified);
+         cout << "\n Image is Loaded!\n";
          break;
       }
       case 2:
       {
          greyScale(theImage);
          isModified = true;
+         cout << "grey scale filter applied\n";
          break;
       }
       case 3:
