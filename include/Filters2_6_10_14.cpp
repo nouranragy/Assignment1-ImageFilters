@@ -1,7 +1,5 @@
 #include "Image_Class.h"
 #include <iostream>
-#include <algorithm>
-#include <cstdlib>
 using namespace std;
 
 void applyBlackandWhite(Image& image)
@@ -131,25 +129,17 @@ void applyScanlineFilter(Image& image)
    {
       for(int j = 0; j< image.height ; ++j)
       {
-         int noise = (rand()%31) - 15;
          for(int k =0 ; k < 3; ++k)
          {
-            int val = image(i,j,k);
             if(j % 2 == 0) 
             {
-              val *=0.5;
+            image(i,j,k) *=0.5;
 
             }
             else
             {
-               val = min(255 , val +15);
+               image(i,j,k) = min(255 , image(i,j,k) +15);
             }
-            if(k == 1){
-               val += 15;
-            }
-            val += noise;
-             image(i,j,k) = clamp( val , 0 , 255);
-
          }
       }
    }
