@@ -21,11 +21,8 @@
  */
 
 #include "Image_Class.h"
-//#define STB_IMAGE_IMPLEMENTATION
-//#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <iostream>
 #include <string>
-//#include "Image_Class.h"
 using namespace std;
 
 
