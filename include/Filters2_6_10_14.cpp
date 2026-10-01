@@ -1,5 +1,7 @@
 #include "Image_Class.h"
 #include <iostream>
+#include <algorithm>
+#include <cstdlib>
 using namespace std;
 
 void applyBlackandWhite(Image& image)
@@ -121,6 +123,37 @@ void applyDetectImageEdges(Image& image)
     image = newimage;
   
 }
+
+void applyScanlineFilter(Image& image)
+{
+   
+    for(int i = 0; i < image.width ; ++i)
+   {
+      for(int j = 0; j< image.height ; ++j)
+      {
+         int noise = (rand()%31) - 15;
+         for(int k =0 ; k < 3; ++k)
+         {
+            int val = image(i,j,k);
+            if(j % 2 == 0) 
+            {
+              val *=0.5;
+
+            }
+            else
+            {
+               val = min(255 , val +15);
+            }
+            if(k == 1){
+               val += 15;
+            }
+            val += noise;
+             image(i,j,k) = clamp( val , 0 , 255);
+
+         }
+      }
+   }
+}
 int main()
 {
    string filename , outputFilename;
@@ -130,7 +163,7 @@ int main()
    Image image(filename);
 
    int choice;
-   cout << "Choose Filter:\n1. Black & White\n2. Rotate Image\n3. Both (Black & White + Rotate) \n4.DetectImageEdges \nEnter choice: " << endl;
+   cout << "Choose Filter:\n1. Black & White\n2. Rotate Image\n3. Both (Black & White + Rotate) \n4.DetectImageEdges \n5.ScanlineFilter\nEnter choice: " << endl;
    cin >> choice;
 
    if(choice == 1){
@@ -146,6 +179,10 @@ int main()
    else if(choice == 4)
    {
      applyDetectImageEdges(image);
+   }
+   else if(choice == 5)
+   {
+     applyScanlineFilter(image);
    }
    
    
