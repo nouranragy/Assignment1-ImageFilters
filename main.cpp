@@ -1,26 +1,6 @@
-/*
- *CS213-Assignment 1 - Part 1
- *File: CS213_A1_Part1_S10_20250240_20250715_20251285_20251413.cpp
- *
- *Team Memberes:
- *[Rodaina Nassar Ibrahim] - ID: [20250240] - Section: [S10]
- *[Nouran Ragy Gamal] - ID: [20250715] - Section: [S10]
- *[Fatma Abd elaziem Mohamed] - ID: [20251285] - Section: [S10]
- *[Malak Ehab Youssef] - ID: [20251413] - Section: [S10]
- *
- *work Breakdown:
- *Filter 1 (Greyscale) - [Rodaina Nassar Ibrahim]
- *Filter 2 (Black&White) - [Nouran Ragy Gamal]
- *Filter 3 (Invert) - [Fatma Abdelaziem Mohamed]
- *Filter 4 (Frame) - [Malak Ehab Youssef]
- *Filter 5 (Flip) - [Rodaina Nassar Ibrahim]
- *Filter 6 (Rotate) - [Nouran Ragy Gamal]
- *Filter 7 (Darken/Lighten) - [Fatma Abdelaziem Mohamed]
- *Filter 8 (Resize) - [Malak Ehab Youssef]
- *Menu/Load/Save - [Rodaina Nassar Ibrahim -Nouran Ragy Gamal - Malak Ehab Youssef]
- */
 #include <iostream>
 #include "Image_Class.h"
+
 using namespace std;
 
 void addFrame(Image& photo) {
@@ -60,12 +40,44 @@ Image resizePhoto(Image& photo, int newWidth, int newHeight) {
     return newPhoto;
 }
 
+void setBlur(Image& photo, int level) {
+    Image newPhoto(photo.width, photo.height);
+    for (int i = 0; i < photo.height; ++i) {
+        for (int j = 0; j < photo.width; ++j) {
+            int sumR = 0;
+            int sumG = 0;
+            int sumB = 0;
+            int count = 0;
+            for (int dx = -level; dx <= level; ++dx) {
+                for (int dy = -level; dy <= level; ++dy) {
+                    int ni = i + dx;
+                    int nj = j + dy;
+                    if (ni >= 0 && ni < photo.height && nj >= 0 && nj < photo.width) {
+                        sumR += photo.getPixel(nj , ni , 0);
+                        sumG += photo.getPixel(nj , ni , 1);
+                        sumB += photo.getPixel(nj , ni , 2);
+                        ++count;
+                    }
+                }
+            }
+            int newR = sumR / count;
+            int newG = sumG / count;
+            int newB = sumB / count;
+            newPhoto.setPixel(j ,i , 0 , newR);
+            newPhoto.setPixel(j ,i , 1 , newG);
+            newPhoto.setPixel(j ,i , 2 , newB);
+        }
+    }
+    photo = newPhoto;
+}
+
 int main() {
     int choice;
     cout << "select a filter" << endl;
     cout << "4 to add a frame" << endl;
     cout << "8 to resize photo" << endl;
-    cout << " Enter choice ( 4 or 8)" << endl;
+    cout  << "12 to blur the photo" << endl;
+    cout << " Enter choice ( 4 or 8 or 12)" << endl;
     cin >> choice;
 
     if (choice == 4) {
@@ -82,6 +94,15 @@ int main() {
         Image resized = resizePhoto(photo, newWidth, newHeight);
         resized.saveImage("marioresized.jpg");
         cout << "photo rsized" << endl;
+    }
+    else if (choice == 12) {
+        Image photo ("mario.bmp");
+        int levelOfBlur;
+        cout << " Enter level of blur" << endl;
+        cin >> levelOfBlur;
+        setBlur(photo, levelOfBlur);
+        photo.saveImage("marioblur.jpg");
+        cout << "photo blured" << endl;
     }
     else {
         cout << "Error" << endl;
