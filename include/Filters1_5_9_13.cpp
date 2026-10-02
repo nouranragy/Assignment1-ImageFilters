@@ -137,22 +137,3 @@ void sunlight(Image& theImage)
       }
    }
 }
-   int main()
-   {
-      try
-      {
-         Image image;
-         image.loadNewImage("issues.jpg");
-         if (mergeImage(image))
-         {
-            image.saveImage("test_merge.png");
-            cout << "merge done : " << image.width << " x " << image.height << "\n";
-         }
-         else
-            cout << "merge failed or cancelled\n";
-      }
-      catch (...)
-      {
-         cout << "Error loading or saving\n";
-      }
-   }
