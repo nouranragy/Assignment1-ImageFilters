@@ -122,17 +122,37 @@ bool mergeImage(Image &theImage) // the first code i did tried three diff ones
    theImage = merging;
    return true;
 }
-int main()
+
+void sunlight(Image& theImage)
 {
-   Image image;
-   try
+   int yelow[3] = {255, 255, 0};
+   for(int i = 0; i < theImage.width; ++i)
    {
-      image.loadNewImage("issues.jpg");
-      if (mergeImage(image))
-         image.saveImage("merged_output.png");
-   }
-   catch (...)
-   {
-      cout << "Error loading or saving\n";
+      for (int j = 0; j <theImage.height; ++j)
+      {
+         for(int k = 0; k < 3; ++k)
+         {
+            theImage(i, j, k) = 0.75 * theImage(i, j, k) + 0.25 * yelow[k];
+         }
+      }
    }
 }
+   int main()
+   {
+      try
+      {
+         Image image;
+         image.loadNewImage("issues.jpg");
+         if (mergeImage(image))
+         {
+            image.saveImage("test_merge.png");
+            cout << "merge done : " << image.width << " x " << image.height << "\n";
+         }
+         else
+            cout << "merge failed or cancelled\n";
+      }
+      catch (...)
+      {
+         cout << "Error loading or saving\n";
+      }
+   }
