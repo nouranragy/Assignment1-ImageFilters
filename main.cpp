@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Image_Class.h"
-
 using namespace std;
 
 void addFrame(Image& photo) {
@@ -71,13 +70,29 @@ void setBlur(Image& photo, int level) {
     photo = newPhoto;
 }
 
+void applyInfrared(Image& photo) {
+    for (int i = 0; i < photo.width; ++i) {
+        for (int j = 0; j < photo.height; ++j) {
+            for (int k = 0; k < 3; ++k) {
+                if (k == 0) {
+                    photo(i, j, k) = 255;
+                } else if (k == 1 || k == 2) {
+                    int originalvalue = photo(i, j, k);
+                    photo(i, j, k) = 255 - originalvalue;
+                }
+            }
+        }
+    }
+}
+
 int main() {
     int choice;
     cout << "select a filter" << endl;
     cout << "4 to add a frame" << endl;
     cout << "8 to resize photo" << endl;
-    cout  << "12 to blur the photo" << endl;
-    cout << " Enter choice ( 4 or 8 or 12)" << endl;
+    cout << "12 to set blur" << endl;
+    cout << "16 to apply infrared" << endl;
+    cout << " Enter choice ( 4 or 8 or 12 or 16)" << endl;
     cin >> choice;
 
     if (choice == 4) {
@@ -103,6 +118,10 @@ int main() {
         setBlur(photo, levelOfBlur);
         photo.saveImage("marioblur.jpg");
         cout << "photo blured" << endl;
+    } else if (choice == 16) {
+        Image photo ("mario.bmp");
+        applyInfrared(photo);
+        photo.saveImage("marioInfrared.jpg");
     }
     else {
         cout << "Error" << endl;
