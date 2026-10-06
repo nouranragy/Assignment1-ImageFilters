@@ -2,17 +2,35 @@
 #include "Image_Class.h"
 using namespace std;
 
-void addFrame(Image& photo) {
+void addFrame(Image& photo, int frameType) {
+    int width = photo.width;
+    int height = photo.height;
     for (int i = 0; i < photo.width; ++i) {
         for (int j = 0; j < photo.height; ++j) {
             for (int k = 0; k < 3; ++k) {
-                if (i < 10 || i > photo.width - 10 || j < 10 || j > photo.height - 10 ) {
-                    if (k == 0) {
+                if (frameType == 1) {
+                    if (i < 10 || i > photo.width - 10 || j < 10 || j > photo.height - 10 ) {
+                        if (k == 0) {
+                            photo(i, j, k) = 255;
+                        } else if (k == 1) {
+                            photo(i, j, k) = 0;
+                        } else if (k == 2) {
+                            photo(i, j, k) = 255;
+                        }
+                    }
+                } else if (frameType == 2) {
+                    bool outer = (i < 15 || i >= width - 15 || j < 15 || j > height - 15 );
+                    bool innerLine = ((i >= 18 && i <= 20) || (i >= width - 21 && i <= width - 19) || (j >= 18 && j <= 20) || (j >= height - 21 && j <= height - 19));
+                    if (innerLine) {
                         photo(i, j, k) = 255;
-                    } else if (k == 1) {
-                        photo(i, j, k) = 0;
-                    } else if (k == 2) {
-                        photo(i, j, k) = 255;
+                    } else if (outer) {
+                        if (k == 0) {
+                            photo(i, j, k) = 180;
+                        } else if (k == 1) {
+                            photo(i, j, k) = 50;
+                        } else if (k == 2) {
+                            photo(i, j, k) = 200;
+                        }
                     }
                 }
             }
@@ -96,8 +114,14 @@ int main() {
     cin >> choice;
 
     if (choice == 4) {
+        int frameType;
+        cout << "Enter frame type" << endl;
+        cout << "1 for simple frame" << endl;
+        cout << "2 for fancy frame" << endl;
+        cout << "enter 1 or 2" << endl;
+        cin >> frameType;
         Image photo ("mario.bmp");
-        addFrame(photo);
+        addFrame(photo, frameType);
         photo.saveImage("marioFramed.jpg");
         cout << " frame applied " << endl;
     }
