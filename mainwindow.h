@@ -23,6 +23,12 @@ private slots:
 
     void on_btnLoad_clicked();
 
+    void on_RotateImage_clicked();
+
+    void on_DetectImageEdges_clicked();
+
+    void on_Scanline_clicked();
+
 private:
     Ui::MainWindow *ui;
     Image myImage;

@@ -75,8 +75,3 @@ x64/
 x86/
 Debug/
 Release/
-
-
-build/
-.qtcreator/
-*.user
