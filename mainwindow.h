@@ -23,7 +23,10 @@ private slots:
     void on_flipImage_clicked();//filter5
 
     void on_BlackandWhite_clicked();
+    void on_addFrame_clicked();
     void on_resizePhoto_clicked();
+    void on_setBlur_clicked();
+    void on_applyInfrared_clicked();
     void on_mergeImage_clicked();
 
     void on_btnLoad_clicked();
