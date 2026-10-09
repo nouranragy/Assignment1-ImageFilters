@@ -75,8 +75,8 @@
    <widget class="QPushButton" name="RotateImage">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>348</y>
+      <x>180</x>
+      <y>350</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -111,6 +111,97 @@
      <string>Scanline</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="greyScale">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>410</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>greyScale</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="flipImage">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>410</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FlipImage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resizePhoto">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>410</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ResizePhoto</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="mergeImage">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>410</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MergeImage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sunLight">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>470</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SunLight</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSave">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>220</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SaveImage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="revertToOriginal">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>220</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RevertToOriginal</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -118,7 +209,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-void greyScale(Image &image)
+void greyScale(Image& image)
 {
    for (int i = 0; i < image.width; ++i)
    {
@@ -18,7 +18,7 @@ void greyScale(Image &image)
    }
 }
 
-void flipImage(Image &image, char direction)
+void flipImage(Image& image, char direction)
 {                                         // temporary is an image copy to not overwrite thr imag and the changes then would be zzzzerro
    Image temp(image.width, image.height); // temp is for temporary
    for (int i = 0; i < image.width; ++i)
@@ -37,7 +37,7 @@ void flipImage(Image &image, char direction)
    }
    image = temp;
 } // DO NOT COPY THATS AN OLD FILTER BUT MY FILTER USES IT AS WELL!!!!
-Image resizePhoto(Image &image, int newWidth, int newHeight)
+Image resizePhoto(Image& image, int newWidth, int newHeight)
 {
    Image newPhoto(newWidth, newHeight);
    double scaleX = (double)image.width / newWidth;
@@ -61,7 +61,7 @@ Image resizePhoto(Image &image, int newWidth, int newHeight)
    }
    return newPhoto;
 } // filter 9
-bool mergeImage(Image &theImage) // the first code i did tried three diff ones 
+bool mergeImage(Image& theImage) // the first code i did tried three diff ones 
 
 {
    cout << "Enter the path of other image, ex (image.png): ";
