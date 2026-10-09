@@ -39,6 +39,39 @@ void MainWindow::on_flipImage_clicked()//filter5
     myImage.saveImage("temp_output.jpg");
     ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
+void MainWindow::on_addFrame_clicked()
+{
+    if (myImage.width == 0 || myImage.height == 0) return;
+    QStringList options = {"1", "2"};
+    bool ok;
+    QString choice = QInputDialog::getItem(this, "Add Frame", "Select Frame Type:", options, 0, false, &ok);
+    if (ok && !choice.isEmpty()) {
+        int frameType = choice.toInt();
+        addFrame(myImage, frameType);
+    }
+    myImage.saveImage("temp_output.jpg");
+
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+void MainWindow::on_setBlur_clicked()
+{
+    if (myImage.width == 0 || myImage.height == 0) return;
+    bool ok;
+    int level = QInputDialog::getInt(this, "Set Blur", "Enter Blur Level (1 - 20):", 3, 1, 20, 1, &ok);
+    if (ok)
+    {
+        setBlur(myImage, level);
+        myImage.saveImage("temp_output.jpg");
+        ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    }
+}
+void MainWindow::on_applyInfrared_clicked()
+{
+    if (myImage.width == 0 || myImage.height == 0) return;
+    applyInfrared(myImage);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
 void MainWindow::on_resizePhoto_clicked()
 {
     if (myImage.width == 0 || myImage.height == 0) return;

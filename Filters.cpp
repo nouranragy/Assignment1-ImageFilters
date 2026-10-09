@@ -1,4 +1,5 @@
 #include "Filters.h"
+#include <algorithm>
 using namespace std;
 
 void greyScale(Image& image) //filter1
@@ -26,6 +27,89 @@ void flipImage(Image& image, char direction)
                      direction == 'v' ? image.height - 1 - j : j, k) = image(i, j, k);
     image = temp;
 }
+void addFrame(Image& photo, int frameType)
+{
+    const int width  = photo.width;
+    const int height = photo.height;
+
+    for (int i = 0; i < width; ++i) {
+        for (int j = 0; j < height; ++j) {
+            // Distance from the nearest edge (0 = outermost pixel)
+            int d = min({ i, j, width - 1 - i, height - 1 - j });
+
+            int r, g, b;
+
+            if (frameType == 1) {
+                // Solid magenta frame, 10px wide
+                if (d >= 10) continue;
+                r = 255; g = 0; b = 255;
+            }
+            else if (frameType == 2) {
+                // Purple frame, 15px wide, with a white inner line at 18-20px
+                if (d >= 18 && d <= 20) {
+                    r = g = b = 255;
+                } else if (d < 15) {
+                    r = 180; g = 50; b = 200;
+                } else {
+                    continue;
+                }
+            }
+            else {
+                return; // unknown frame type: leave the photo untouched
+            }
+
+            photo(i, j, 0) = r;
+            photo(i, j, 1) = g;
+            photo(i, j, 2) = b;
+        }
+    }
+}
+void applyInfrared(Image& photo)
+{
+    for (int i = 0; i < photo.width; ++i) {
+        for (int j = 0; j < photo.height; ++j) {
+            for (int k = 0; k < 3; ++k) {
+                if (k == 0) {
+                    photo(i, j, k) = 255;
+                } else if (k == 1 || k == 2) {
+                    int originalvalue = photo(i, j, k);
+                    photo(i, j, k) = 255 - originalvalue;
+                }
+            }
+        }
+    }
+}
+void setBlur(Image& photo, int level) {
+    Image newPhoto(photo.width, photo.height);
+    for (int i = 0; i < photo.height; ++i) {
+        for (int j = 0; j < photo.width; ++j) {
+            int sumR = 0;
+            int sumG = 0;
+            int sumB = 0;
+            int count = 0;
+            for (int dx = -level; dx <= level; ++dx) {
+                for (int dy = -level; dy <= level; ++dy) {
+                    int ni = i + dx;
+                    int nj = j + dy;
+                    if (ni >= 0 && ni < photo.height && nj >= 0 && nj < photo.width) {
+                        sumR += photo.getPixel(nj , ni , 0);
+                        sumG += photo.getPixel(nj , ni , 1);
+                        sumB += photo.getPixel(nj , ni , 2);
+                        ++count;
+                    }
+                }
+            }
+            int newR = sumR / count;
+            int newG = sumG / count;
+            int newB = sumB / count;
+            newPhoto.setPixel(j ,i , 0 , newR);
+            newPhoto.setPixel(j ,i , 1 , newG);
+            newPhoto.setPixel(j ,i , 2 , newB);
+        }
+    }
+    photo = newPhoto;
+}
+
 Image resizePhoto(Image& image, int newWidth, int newHeight)
 {
     Image newPhoto(newWidth, newHeight);
