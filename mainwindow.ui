@@ -23,27 +23,6 @@
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>BlackandWhite</string>
     </property>
@@ -56,27 +35,6 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
     </property>
     <property name="text">
      <string>  Load Image</string>
@@ -123,27 +81,6 @@ background-color: #d9648a;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>RotateImage</string>
     </property>
@@ -156,27 +93,6 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>DetectImageEdges</string>
@@ -191,27 +107,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>Scanline</string>
     </property>
@@ -224,27 +119,6 @@ background-color: #e88eaa;
       <width>141</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>greyScale</string>
@@ -259,27 +133,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>FlipImage</string>
     </property>
@@ -292,27 +145,6 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>ResizePhoto</string>
@@ -327,27 +159,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>MergeImage</string>
     </property>
@@ -360,27 +171,6 @@ background-color: #e88eaa;
       <width>141</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>SunLight</string>
@@ -395,27 +185,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
-    </property>
     <property name="text">
      <string>SaveImage</string>
     </property>
@@ -428,27 +197,6 @@ background-color: #d9648a;
       <width>161</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
     </property>
     <property name="text">
      <string>RevertToOriginal</string>
@@ -463,27 +211,6 @@ background-color: #d9648a;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>AddFrame</string>
     </property>
@@ -496,27 +223,6 @@ background-color: #e88eaa;
       <width>171</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>ApplyInfrared</string>
@@ -531,27 +237,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>SetBlur</string>
     </property>
@@ -564,27 +249,6 @@ background-color: #e88eaa;
       <width>121</width>
       <height>31</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
     </property>
     <property name="text">
      <string>OilPainting</string>
@@ -599,27 +263,6 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
     <property name="text">
      <string>SkewImage</string>
     </property>
@@ -631,7 +274,7 @@ background-color: #e88eaa;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
