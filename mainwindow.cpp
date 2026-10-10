@@ -248,3 +248,14 @@ void MainWindow::on_sunLight_clicked()
 
 }
 
+
+void MainWindow::on_OilPainting_clicked()
+{
+    if(myImage.width == 0 || myImage.height == 0) return;
+    applyOilPainting(myImage);
+
+    myImage.saveImage("temp_output.jpg");
+
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+

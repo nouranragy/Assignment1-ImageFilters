@@ -16,4 +16,5 @@ bool mergeImage(Image& theImage);
 void applyDetectImageEdges(Image& image);
 void applyScanlineFilter(Image& image);
 void sunlight(Image& theImage);
+void applyOilPainting(Image& image);
 #endif // FILTERS_H
