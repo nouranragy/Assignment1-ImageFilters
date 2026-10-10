@@ -87,7 +87,7 @@ void MainWindow::on_resizePhoto_clicked()
     myImage.saveImage("temp_output.jpg");
 
     QPixmap pix("temp_output.jpg");
-    ui->lblProcessed->setPixmap(pix);
+    ui->lblProcessed->setPixmap(pix.scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
     ui->lblProcessed->setAlignment(Qt::AlignCenter);
 
     statusBar()->showMessage(QString("New size: %1 x %2").arg(myImage.width).arg(myImage.height), 5000);
@@ -177,7 +177,7 @@ void MainWindow::on_btnLoad_clicked()
 void MainWindow::on_btnSave_clicked()
 {
     if(myImage.width ==0 || myImage.height == 0) return;
-    QString fileName = QFileDialog::getSaveFileName(this, "Save Image", "", "Image(*.png * .jpg * bmp)");
+    QString fileName = QFileDialog::getSaveFileName(this, "Save Image", "", "Image(*.png * .jpg * .bmp)");
     if(fileName.isEmpty()) return;
     if (QFileInfo(fileName).suffix().isEmpty()) fileName += ".png";
     myImage.saveImage(fileName.toStdString());

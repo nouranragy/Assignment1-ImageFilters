@@ -137,23 +137,26 @@ background-color: #d9648a;
      <string/>
     </property>
     <property name="scaledContents">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="lblProcessed">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>-10</y>
       <width>191</width>
-      <height>151</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="scaledContents">
-     <bool>true</bool>
+     <bool>false</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="RotateImage">
