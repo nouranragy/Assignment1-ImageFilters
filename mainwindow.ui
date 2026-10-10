@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
-    <height>600</height>
+    <width>1498</width>
+    <height>829</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -715,9 +715,9 @@ background-color: #e88eaa;
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>290</y>
+      <y>288</y>
       <width>151</width>
-      <height>29</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -748,10 +748,10 @@ background-color: #e88eaa;
    <widget class="QPushButton" name="LightenDarken">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>290</y>
-      <width>151</width>
-      <height>29</height>
+      <x>540</x>
+      <y>288</y>
+      <width>171</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -782,10 +782,10 @@ background-color: #e88eaa;
    <widget class="QPushButton" name="cropImage">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>510</y>
-      <width>131</width>
-      <height>29</height>
+      <x>50</x>
+      <y>520</y>
+      <width>181</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -816,10 +816,10 @@ background-color: #e88eaa;
    <widget class="QPushButton" name="applyPurple">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>510</y>
-      <width>151</width>
-      <height>29</height>
+      <x>310</x>
+      <y>520</y>
+      <width>171</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -853,8 +853,8 @@ background-color: #e88eaa;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>786</width>
-     <height>25</height>
+     <width>1498</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
