@@ -1,5 +1,6 @@
 #include "Filters.h"
 #include <algorithm>
+#include<cmath>
 using namespace std;
 
 void greyScale(Image& image) //filter1
@@ -350,6 +351,30 @@ void sunlight(Image& theImage)
             }
         }
     }
+}
+void skewImage(Image& myImage, double degrees)
+{
+    double t = tan(degrees * 3.141 / 180);
+    int newWidth = myImage.width + (int)(myImage.height * t + 0.5);
+    Image temp (newWidth, myImage.height);
+    for (int i = 0; i < newWidth; ++i)
+    {
+        for (int j = 0; j <myImage.height; ++j)
+        {
+            for (int k = 0; k< 3; ++k) temp (i, j, k) = 255;
+        }
+    }
+    for (int j = 0; j < myImage.height; ++j)
+    {
+        int shift = (int)((myImage.height - 1 - j) * t + 0.5);
+        for (int i = 0; i< myImage.width; ++i)
+        {
+            for (int k = 0; k < 3; ++k) temp (i + shift, j, k) = myImage(i, j, k);
+
+        }
+    }
+    myImage = temp;
+
 }
 
 

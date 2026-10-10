@@ -38,6 +38,7 @@ private slots:
 
     void on_Scanline_clicked();
     void on_sunLight_clicked();
+    void on_skewImage_clicked();
 
 private:
     Ui::MainWindow *ui;

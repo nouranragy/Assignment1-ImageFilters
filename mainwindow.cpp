@@ -247,4 +247,14 @@ void MainWindow::on_sunLight_clicked()
     ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
 }
+void MainWindow::on_skewImage_clicked()
+{
+    if (myImage.width == 0|| myImage.height == 0) return;
+    bool ok;
+    double degrees = QInputDialog::getDouble(this, tr("Skew Image"), tr("Enter angle in gegrees: "), 0, -89.0, 89.0, 1, &ok);
+    if (!ok) return;
+    skewImage(myImage, degrees);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
 
