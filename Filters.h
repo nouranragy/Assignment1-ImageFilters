@@ -17,4 +17,5 @@ void applyDetectImageEdges(Image& image);
 void applyScanlineFilter(Image& image);
 void sunlight(Image& theImage);
 void skewImage(Image& myImage, double degrees);
+void applyOilPainting(Image& image);
 #endif // FILTERS_H

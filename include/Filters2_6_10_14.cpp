@@ -144,6 +144,68 @@ void applyScanlineFilter(Image& image)
       }
    }
 }
+
+void applyOilPainting(Image& image)
+{
+  Image newimage(image.width , image.height);
+  int radius = 2;
+  int levels = 15;
+
+  for(int i =0 ;  i< image.width;i++){
+   for(int j =0 ; j< image.height;j++){
+      int intensityCount[256] = {0};
+      long rSum[256] = {0};
+      long gSum[256] = {0};
+      long bSum[256] = {0};
+
+      for(int dx = -radius ; dx<= radius ; dx++){
+          for(int dy = -radius ; dy<= radius ; dy++){
+         int nx = i + dx;
+         int ny = j+dy;
+
+         if(nx >= 0 && nx < image.width && ny >= 0 && ny < image.height ){
+
+            unsigned char r = image(nx,ny,0);
+            unsigned char g = image(nx,ny,1);
+            unsigned char b = image(nx,ny,2);
+
+            int curIntensity = (r + g + b)/ 3;
+            int level =  (curIntensity * levels) /255;
+
+            intensityCount[level]++;
+            rSum[level] += r;
+            gSum[level] += g;
+            bSum[level] += b;
+             }
+         }
+      }
+     
+      int maxFrequency = 0;
+      int bestLevel = 0;
+      for(int l = 0; l < levels ; l++)
+      {
+         if(intensityCount[l] > maxFrequency){
+            maxFrequency = intensityCount[l];
+            bestLevel = l;
+         }
+      }
+
+      if(maxFrequency > 0){
+         newimage(i,j,0) = rSum[bestLevel] / maxFrequency;
+         newimage(i,j,1) = gSum[bestLevel] / maxFrequency;
+         newimage(i,j,2) = bSum[bestLevel] / maxFrequency;
+         
+      }
+      else{
+         for(int k = 0; k <3 ; k++){
+            newimage(i,j,k) = image(i,j,k);
+         }
+      }
+   }
+  }
+  image = newimage;
+}
+
 int main()
 {
    string filename , outputFilename;
@@ -153,7 +215,7 @@ int main()
    Image image(filename);
 
    int choice;
-   cout << "Choose Filter:\n1. Black & White\n2. Rotate Image\n3. Both (Black & White + Rotate) \n4.DetectImageEdges \n5.ScanlineFilter\nEnter choice: " << endl;
+   cout << "Choose Filter:\n1. Black & White\n2. Rotate Image\n3. Both (Black & White + Rotate) \n4.DetectImageEdges \n5.ScanlineFilter \n6.OilPaintingFilter \nEnter choice: " << endl;
    cin >> choice;
 
    if(choice == 1){
@@ -173,6 +235,10 @@ int main()
    else if(choice == 5)
    {
      applyScanlineFilter(image);
+   }
+   else if(choice == 6)
+   {
+     applyOilPainting(image);
    }
    
    
