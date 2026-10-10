@@ -13,6 +13,42 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QInputDialog {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 2px solid #f48fb1; 
+    border-radius: 6px;
+}
+QInputDialog QLabel {
+    color: #ffffff;
+    font-weight: bold;
+}
+QInputDialog QSpinBox, QInputDialog QLineEdit {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    border: 1px solid #f48fb1;
+    border-radius: 4px;
+    padding: 4px;
+}
+QInputDialog QPushButton {
+    background-color: #ad1457; 
+    color: #ffffff;
+    border: 1px solid #880e4f;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-weight: bold;
+}
+
+QInputDialog QPushButton:hover {
+    background-color: #880e4f;
+}
+
+QInputDialog QPushButton:pressed {
+    background-color: #f48fb1;
+    color: #2b2b2b;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="BlackandWhite">
     <property name="geometry">
