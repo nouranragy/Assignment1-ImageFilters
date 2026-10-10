@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1498</width>
+    <height>829</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -624,13 +624,145 @@ background-color: #e88eaa;
      <string>SkewImage</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="applyInvert">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>288</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>ApplyInvert</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LightenDarken">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>288</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}</string>
+    </property>
+    <property name="text">
+     <string>Lighten / Darken</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cropImage">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>520</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>CropImage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="applyPurple">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>520</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>ApplyPurple</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1498</width>
      <height>26</height>
     </rect>
    </property>
