@@ -19,6 +19,10 @@ public:
     ~MainWindow() override;
 
 private slots:
+    void on_applyPurple_clicked();
+    void on_cropImage_clicked();
+    void on_LightenDarken_clicked();
+    void on_applyInvert_clicked();
     void on_greyScale_clicked();//filter1
     void on_flipImage_clicked();//filter5
 

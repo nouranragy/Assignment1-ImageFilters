@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>786</width>
     <height>600</height>
    </rect>
   </property>
@@ -22,6 +22,9 @@
       <width>141</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -56,6 +59,9 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -123,6 +129,9 @@ background-color: #d9648a;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -156,6 +165,9 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -191,6 +203,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -224,6 +239,9 @@ background-color: #e88eaa;
       <width>141</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -259,6 +277,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -292,6 +313,9 @@ background-color: #e88eaa;
       <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -327,6 +351,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -360,6 +387,9 @@ background-color: #e88eaa;
       <width>141</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -395,6 +425,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color:  #c84b73;
@@ -428,6 +461,9 @@ background-color: #d9648a;
       <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -463,6 +499,9 @@ background-color: #d9648a;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -496,6 +535,9 @@ background-color: #e88eaa;
       <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -531,6 +573,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -564,6 +609,9 @@ background-color: #e88eaa;
       <width>121</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -599,6 +647,9 @@ background-color: #e88eaa;
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: #e8a5b8;
@@ -624,14 +675,150 @@ background-color: #e88eaa;
      <string>SkewImage</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="applyInvert">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>290</y>
+      <width>151</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>ApplyInvert</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LightenDarken">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>290</y>
+      <width>151</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>Lighten / Darken</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cropImage">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>510</y>
+      <width>131</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>CropImage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="applyPurple">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>510</y>
+      <width>151</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+    </property>
+    <property name="text">
+     <string>ApplyPurple</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>786</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

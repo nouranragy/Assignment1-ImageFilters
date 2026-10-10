@@ -107,8 +107,7 @@ void MainWindow::on_mergeImage_clicked()
     if (myImage.width != otherImage.width || myImage.height != otherImage.height)
     {
         bool ok;
-        QString choice = QInputDialog::getItem(this, "Different sizes", "1: resize both, 2: merge the common area",
-                                               {"1", "2"}, 0, false, &ok);
+        QString choice = QInputDialog::getItem(this, "Different sizes", "1: resize both, 2: merge the common area", {"1", "2"}, 0, false, &ok);
         if (!ok) return;
         option = choice.toInt();
         if (option == 2)
@@ -268,4 +267,48 @@ void MainWindow::on_OilPainting_clicked()
 
     ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
+void MainWindow::on_applyInvert_clicked()
+{
+    if (myImage.width == 0|| myImage.height == 0) return;
+    applyInvertFilter(myImage);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+void MainWindow::on_LightenDarken_clicked()
+{
+    if (myImage.width == 0|| myImage.height == 0) return;
+    QStringList options = {"Lighten", "Darken"};
+    bool ok;
+    QString choice = QInputDialog::getItem(this, "Lighten / Darken", "Select Option: ", options, 0, false, &ok);
+    if (!ok || choice.isEmpty()) return;
+    if (choice == "Lighten") lightenImage(myImage);
+    else if (choice == "Darken") darkenImage(myImage);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+void MainWindow::on_cropImage_clicked()
+{
+    if (myImage.width == 0|| myImage.height == 0) return;
+    bool ok1, ok2, ok3,ok4;
+    int x = QInputDialog::getInt(this, "Crop Image", "Enter start X: ", 0, 0, myImage.width, 1, &ok1);
+    if(!ok1) return;
+    int y = QInputDialog::getInt(this, "Crop Image", "Enter start Y: ", 0, 0, myImage.height, 1, &ok2);
+    if(!ok2) return;
+    int w = QInputDialog::getInt(this, "Crop Image", "Enter Width: ", 0, 0, myImage.width - x, 1, &ok3);
+    if(!ok3) return;
+    int h = QInputDialog::getInt(this, "Crop Image", "Enter Height: ", 0, 0, myImage.height - y, 1, &ok4);
+    if(!ok4) return;
+    cropImage(myImage, x, y, w, h);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+void MainWindow::on_applyPurple_clicked()
+{
+    if (myImage.width == 0|| myImage.height == 0) return;
+    applyPurpleFilter(myImage);
+    myImage.saveImage("temp_output.jpg");
+    ui->lblProcessed->setPixmap(QPixmap("temp_output.jpg").scaled(ui->lblProcessed->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+
+
 

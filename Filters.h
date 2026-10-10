@@ -3,7 +3,11 @@
 
 #include "Image_Class.h"
 
-
+void applyPurpleFilter(Image& image);
+void cropImage(Image& img, int x, int y, int W, int H);
+void darkenImage(Image& img);
+void lightenImage(Image& imge);
+void applyInvertFilter(Image& image);
 void greyScale(Image& image); //filter1
 void applyBlackandWhite(Image& image);
 void applyRotateImage(Image& image , int angle);

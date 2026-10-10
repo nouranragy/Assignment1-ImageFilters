@@ -3,6 +3,51 @@
 #include<cmath>
 using namespace std;
 
+void applyPurpleFilter(Image& image) {
+    for (int i = 0; i < image.width; ++i) {
+        for (int j = 0; j < image.height; ++j) {
+            unsigned char r = image(i, j, 0);
+            unsigned char g = image(i, j, 1);
+            unsigned char b = image(i, j, 2);
+            int new_r = min(255, (int)(r * 1));
+            int new_g = (int)(g * .5);
+            int new_b = min(255, (int)(b * 1.1));
+            image(i, j, 0) = new_r;
+            image(i, j, 1) = new_g;
+            image(i, j, 2) = new_b;
+
+
+        }
+    }
+}
+void cropImage(Image& img, int x, int y, int W, int H) {
+    if (x < 0 || y < 0 || x + W > img.width || y + H > img.height || W <= 0 || H <= 0) {
+        return;
+    }
+
+    Image croppedImage(W, H);
+    for (int i = 0; i < W; ++i) {
+        for (int j = 0; j < H; ++j) {
+            for (int c = 0; c < 3; ++c) {
+                croppedImage(i, j, c) = img(x + i, y + j, c);
+            }
+        }
+    }
+    img = croppedImage;
+}
+
+void darkenImage(Image& img) {
+    for (int i = 0; i < img.height; ++i)
+        for (int j = 0; j < img.width; ++j)
+            for (int k = 0; k < 3; ++k)
+                img(j, i, k) *=0.5;
+}
+void lightenImage(Image& img){
+    for (int i = 0; i < img.height; ++i)
+        for (int j = 0; j < img.width; ++j)
+            for (int k = 0; k < 3 ; ++k)
+                img(j, i, k) = img(j, i, k) + (255-img(j, i, k)) * 0.5;
+}
 void greyScale(Image& image) //filter1
 {
     for (int i = 0; i < image.width; ++i)
@@ -15,6 +60,15 @@ void greyScale(Image& image) //filter1
             clr /= 3;
             for (int k = 0; k < image.channels; ++k)
                 image(i, j, k) = clr;
+        }
+    }
+}
+void applyInvertFilter(Image& image) {
+    for (int i= 0; i < image.width; ++i) {
+        for (int j = 0; j < image.height; ++j) {
+            for (int k = 0; k < 3; ++k ) {
+                image.setPixel(i, j, k, 255 - image.getPixel(i, j, k));
+            }
         }
     }
 }
