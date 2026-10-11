@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1498</width>
-    <height>829</height>
+    <width>1748</width>
+    <height>1086</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -47,107 +53,32 @@ QInputDialog QPushButton:hover {
 QInputDialog QPushButton:pressed {
     background-color: #f48fb1;
     color: #2b2b2b;
+}
+QWidget#centralwidget {
+    background-color: #3f3f3f;
+    background-image: url(:/new/prefix1/-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: right top;
 }</string>
   </property>
+  <property name="iconSize">
+   <size>
+    <width>20</width>
+    <height>20</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="BlackandWhite">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>350</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>BlackandWhite</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnLoad">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>220</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
-    </property>
-    <property name="text">
-     <string>  Load Image</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblOriginal">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>10</y>
-      <width>191</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="lblProcessed">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>-10</y>
-      <width>191</width>
-      <height>211</height>
+      <x>420</x>
+      <y>60</y>
+      <width>791</width>
+      <height>441</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
@@ -159,316 +90,32 @@ background-color: #d9648a;
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="RotateImage">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>350</y>
-      <width>171</width>
-      <height>31</height>
+      <x>0</x>
+      <y>0</y>
+      <width>411</width>
+      <height>151</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
+    <property name="title">
+     <string>File :</string>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>RotateImage</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="DetectImageEdges">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>348</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>DetectImageEdges</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Scanline">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>348</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>Scanline</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="greyScale">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>410</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>greyScale</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="flipImage">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>410</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>FlipImage</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="resizePhoto">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>410</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>ResizePhoto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="mergeImage">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>410</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>MergeImage</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="sunLight">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>470</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: #e8a5b8;
-border: 1px solid #c0c0c0;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #5789ff;
-border: 2px solid  #46207f;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #e88eaa;
-}</string>
-    </property>
-    <property name="text">
-     <string>SunLight</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnSave">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>220</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+    <widget class="QPushButton" name="btnLoad">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>37</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color:  #c84b73;
 border: 1px solid #b03f65;
 border-radius: 15px;
@@ -487,62 +134,508 @@ padding-bottom;
 QPushButton:hover {
 background-color: #d9648a;
 }</string>
+     </property>
+     <property name="text">
+      <string>  Load Image</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Exit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:  #c84b73;
+border: 1px solid #b03f65;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #a63a5e;
+border: 2px solid #ffb3cc;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #d9648a;
+}</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSave">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>40</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:  #c84b73;
+border: 1px solid #b03f65;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #a63a5e;
+border: 2px solid #ffb3cc;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #d9648a;
+}</string>
+     </property>
+     <property name="text">
+      <string>SaveImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="revertToOriginal">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>110</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:  #c84b73;
+border: 1px solid #b03f65;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #a63a5e;
+border: 2px solid #ffb3cc;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #d9648a;
+}</string>
+     </property>
+     <property name="text">
+      <string>RevertToOriginal</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lblOriginal">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>560</y>
+      <width>791</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
-     <string>SaveImage</string>
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="revertToOriginal">
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>191</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string> Filters :</string>
+    </property>
+    <widget class="QPushButton" name="setBlur">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>62</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>SetBlur</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="mergeImage">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>126</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>MergeImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BlackandWhite">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>318</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>BlackandWhite</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="sunLight">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>380</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>SunLight</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="applyInfrared">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>440</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>ApplyInfrared</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cropImage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>510</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>CropImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="applyPurple">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>570</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>ApplyPurple</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="greyScale">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>greyScale</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="applyInvert">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #e8a5b8;
+border: 1px solid #c0c0c0;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #5789ff;
+border: 2px solid  #46207f;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #e88eaa;
+}</string>
+     </property>
+     <property name="text">
+      <string>ApplyInvert</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>220</y>
-      <width>161</width>
-      <height>31</height>
+      <y>160</y>
+      <width>191</width>
+      <height>621</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
+    <property name="title">
+     <string> Filters :</string>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
-    </property>
-    <property name="text">
-     <string>RevertToOriginal</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="addFrame">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>290</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+    <widget class="QPushButton" name="RotateImage">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>126</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -561,25 +654,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>AddFrame</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="applyInfrared">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>470</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>RotateImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="flipImage">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>190</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -598,25 +691,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>ApplyInfrared</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="setBlur">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>290</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>FlipImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DetectImageEdges">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>254</y>
+       <width>163</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -635,25 +728,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>SetBlur</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="OilPainting">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>470</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>DetectImageEdges</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="resizePhoto">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>318</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -672,25 +765,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>OilPainting</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="skewImage">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>470</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>ResizePhoto</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="OilPainting">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>382</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -709,22 +802,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>SkewImage</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="applyInvert">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>288</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>OilPainting</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="skewImage">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>446</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -743,22 +839,22 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>ApplyInvert</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="LightenDarken">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>288</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>SkewImage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="LightenDarken">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>62</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -777,22 +873,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>Lighten / Darken</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="cropImage">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>520</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>Lighten / Darken</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Scanline">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>510</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -811,22 +910,25 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>CropImage</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="applyPurple">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>520</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+     </property>
+     <property name="text">
+      <string>Scanline</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addFrame">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>574</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
 background-color: #e8a5b8;
 border: 1px solid #c0c0c0;
 border-radius: 15px;
@@ -845,43 +947,58 @@ padding-bottom;
 QPushButton:hover {
 background-color: #e88eaa;
 }</string>
-    </property>
-    <property name="text">
-     <string>ApplyPurple</string>
-    </property>
+     </property>
+     <property name="text">
+      <string>AddFrame</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="Exit">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>130</y>
-      <width>161</width>
-      <height>31</height>
+      <x>1140</x>
+      <y>-10</y>
+      <width>451</width>
+      <height>311</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:  #c84b73;
-border: 1px solid #b03f65;
-border-radius: 15px;
-padding: 5px 15px;
-font-weight: bold;
-}
-
-QPushButton:pressed {
-background-color: #a63a5e;
-border: 2px solid #ffb3cc;
-padding-top: 7px;
-padding-bottom;
-
-}
-
-QPushButton:hover {
-background-color: #d9648a;
-}</string>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/new/prefix1/icons/_️_️-removebg-preview.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-80</x>
+      <y>800</y>
+      <width>411</width>
+      <height>261</height>
+     </rect>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/new/prefix1/icons/_️_️-removebg-preview.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>750</y>
+      <width>391</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/new/prefix1/icons/download__2_-removebg-preview.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -890,13 +1007,16 @@ background-color: #d9648a;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1498</width>
-     <height>26</height>
+     <width>1748</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

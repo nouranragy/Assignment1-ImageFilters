@@ -26,6 +26,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Filters.h
         Filters.cpp
         Image_Class.h
+        resources.qrc
+        resources.qrc
+        icons.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET CS213_A1_Part1_S10_20250240_20250715_20251285_20251413 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
