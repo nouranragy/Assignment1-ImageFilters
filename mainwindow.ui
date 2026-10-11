@@ -71,14 +71,14 @@ QWidget#centralwidget {
    <widget class="QLabel" name="lblProcessed">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>60</y>
-      <width>791</width>
+      <x>430</x>
+      <y>20</y>
+      <width>841</width>
       <height>441</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color:rgb(255, 255, 255)</string>
     </property>
     <property name="text">
      <string/>
@@ -251,14 +251,14 @@ background-color: #d9648a;
    <widget class="QLabel" name="lblOriginal">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>560</y>
-      <width>791</width>
+      <x>430</x>
+      <y>500</y>
+      <width>851</width>
       <height>431</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color:rgb(255, 255, 255)</string>
     </property>
     <property name="text">
      <string/>
@@ -985,22 +985,33 @@ background-color: #e88eaa;
      <pixmap resource="resources.qrc">:/new/prefix1/icons/_️_️-removebg-preview.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>1120</x>
-      <y>750</y>
-      <width>391</width>
-      <height>201</height>
+      <x>-170</x>
+      <y>-101</y>
+      <width>1911</width>
+      <height>1181</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/new/prefix1/icons/download__2_-removebg-preview.png</pixmap>
+     <pixmap resource="icons.qrc">:/icons.png/bggg.jpeg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
+   <zorder>label_4</zorder>
+   <zorder>lblProcessed</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>lblOriginal</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1017,6 +1028,7 @@ background-color: #e88eaa;
  <resources>
   <include location="resources.qrc"/>
   <include location="resources.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>

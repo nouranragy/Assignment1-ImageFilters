@@ -2,5 +2,6 @@
     <qresource prefix="/icons.png">
         <file>_️_️-removebg-preview.png</file>
         <file>download__2_-removebg-preview.png</file>
+        <file>bggg.jpeg</file>
     </qresource>
 </RCC>
