@@ -82,40 +82,36 @@ void flipImage(Image& image, char direction)
                      direction == 'v' ? image.height - 1 - j : j, k) = image(i, j, k);
     image = temp;
 }
-void addFrame(Image& photo, int frameType)
+void addFrame(Image& photo, int frameType)//fiter4
 {
-    const int width  = photo.width;
+    const int width = photo.width;
     const int height = photo.height;
-
-    for (int i = 0; i < width; ++i) {
-        for (int j = 0; j < height; ++j) {
-            // Distance from the nearest edge (0 = outermost pixel)
-            int d = min({ i, j, width - 1 - i, height - 1 - j });
-
+    for (int i = 0; i< width; ++i)
+    {
+        for (int j = 0; j < height; ++j)
+        {
+            int d = min({i, j, width - 1 - i, height - 1 - j});
             int r, g, b;
-
-            if (frameType == 1) {
-                // Solid magenta frame, 10px wide
+            if (frameType == 1)
+            {
                 if (d >= 10) continue;
                 r = 255; g = 0; b = 255;
             }
-            else if (frameType == 2) {
-                // Purple frame, 15px wide, with a white inner line at 18-20px
-                if (d >= 18 && d <= 20) {
-                    r = g = b = 255;
-                } else if (d < 15) {
-                    r = 180; g = 50; b = 200;
-                } else {
+            else if (frameType == 2)
+            {
+                if (d >= 18 && d <= 20) r = g = b = 255;
+                else if (d < 15)
+                {r = 180; g = 50; b = 200;}
+                else
+                {
                     continue;
                 }
             }
-            else {
-                return; // unknown frame type: leave the photo untouched
-            }
-
-            photo(i, j, 0) = r;
+            else{return;}
+            photo (i, j, 0) = r;
             photo(i, j, 1) = g;
             photo(i, j, 2) = b;
+
         }
     }
 }
