@@ -312,3 +312,8 @@ void MainWindow::on_applyPurple_clicked()
 
 
 
+void MainWindow::on_Exit_clicked()
+{
+    close();
+}
+

@@ -45,6 +45,7 @@ private slots:
     void on_skewImage_clicked();
 
     void on_OilPainting_clicked();
+    void on_Exit_clicked();
 
 private:
     Ui::MainWindow *ui;

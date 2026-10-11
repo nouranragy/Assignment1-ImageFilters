@@ -850,6 +850,40 @@ background-color: #e88eaa;
      <string>ApplyPurple</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="Exit">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>130</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color:  #c84b73;
+border: 1px solid #b03f65;
+border-radius: 15px;
+padding: 5px 15px;
+font-weight: bold;
+}
+
+QPushButton:pressed {
+background-color: #a63a5e;
+border: 2px solid #ffb3cc;
+padding-top: 7px;
+padding-bottom;
+
+}
+
+QPushButton:hover {
+background-color: #d9648a;
+}</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
