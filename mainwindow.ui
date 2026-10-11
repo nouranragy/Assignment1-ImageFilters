@@ -78,7 +78,7 @@ QWidget#centralwidget {
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(255, 255, 255)</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
@@ -258,7 +258,7 @@ background-color: #d9648a;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(255, 255, 255)</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
@@ -1019,7 +1019,7 @@ background-color: #e88eaa;
      <x>0</x>
      <y>0</y>
      <width>1748</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
