@@ -26,8 +26,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Filters.h
         Filters.cpp
         Image_Class.h
-        resources.qrc
-        resources.qrc
         icons.qrc
     )
 # Define target properties for Android with Qt 6 as:

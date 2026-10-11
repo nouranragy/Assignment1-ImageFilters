@@ -966,7 +966,7 @@ background-color: #e88eaa;
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/new/prefix1/icons/_️_️-removebg-preview.png</pixmap>
+     <pixmap resource="icons.qrc">:/icons.png/bg.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -982,7 +982,7 @@ background-color: #e88eaa;
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/new/prefix1/icons/_️_️-removebg-preview.png</pixmap>
+     <pixmap resource="icons.qrc">:/icons.png/bg.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -1019,15 +1019,13 @@ background-color: #e88eaa;
      <x>0</x>
      <y>0</y>
      <width>1748</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
-  <include location="resources.qrc"/>
   <include location="icons.qrc"/>
  </resources>
  <connections/>

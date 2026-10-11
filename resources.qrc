@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefix1/icons">
-        <file>resources.qrc</file>
-        <file>download__2_-removebg-preview.png</file>
-        <file>_️_️-removebg-preview.png</file>
-    </qresource>
-    <qresource prefix="/new/prefix1"/>
-</RCC>
