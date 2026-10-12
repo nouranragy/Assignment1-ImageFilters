@@ -99,9 +99,7 @@ Work Division:
 - Fatma AbdelAziem -> Filters( 3 , 7 , 11 . 15)
 
 - [GitHub Repo] 20250240 , 20250715 , 20251413 and 20251285.
-- 
 - [GUI and main menu] only 20250240 , 20250715 and 20251413.
-- 
 - [Two Bonus filters] only 20250240 and 20250715.
 
 
