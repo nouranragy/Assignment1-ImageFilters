@@ -102,6 +102,15 @@ Work Division:
 
 - [Two Bonus filters] only 20250240 and 20250715.
 
+  ---
+
+  Links:
+  ---
+  - Video of Baby Photoshop link: https://youtu.be/dnfkcGlqr58
+  - GitHub Repository link: https://github.com/nouranragy/Assignment1-ImageFilters
+  -  Google document link: https://docs.google.com/document/d/1TDz433WzLPzU2anAXFXUq6JYaktUKJAjVJxGCNm7pV8/edit?usp=sharing
+
+
 
 
 
